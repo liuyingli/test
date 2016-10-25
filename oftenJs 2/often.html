@@ -1,0 +1,56 @@
+﻿
+<style>
+    
+</style>
+将时间戳转换成日期<input id="stampToTime" type="text" /> <div id="stampToTimeDiv" style="display: inline-block;"></div><br>
+将日期转换成时间戳<input id="timeToStamp" type="text" /> <div id="timeToStampDiv" style="display: inline-block;"></div>
+
+
+<textarea id="inputor1476257278">
+    
+</textarea>
+<script type="text/javascript" src="http://res.hjfile.cn/js/lib/jq/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="util.js"></script>
+<script src="http://x.kingnet.com/addons/theme/stv1/_static/js/jquery.atwho.js?v=2013110801"></script>
+<script src="http://x.kingnet.com/addons/theme/stv1/_static/js/jquery.caret.js?v=2013110801"></script>
+<script type="text/javascript">
+    $('#stampToTime').blur(function(){
+        var val=$(this).val();
+        var da=kyUtil.stampToTime(val);//将时间戳转换成日期;
+        var da2=kyUtil.getFamatDate(da,'all');
+        $('#stampToTimeDiv').html(da2);
+    })
+    $('#timeToStamp').blur(function(){
+        var val=$(this).val();
+        var da=kyUtil.timeStamp(val);//将日期转换成时间戳;
+        $('#timeToStampDiv').html(da);
+    })
+</script>
+<script type="text/javascript">
+$(function(){
+
+    // if ( $('#inputor1476257278').get(0) != undefined ){
+    //     setTimeout(function (){
+    //         if ( initHtml ){
+    //             $('#inputor1476257278').focus();
+    //             $('#inputor1476257278').html(initHtml);
+    //         }
+    //     } , 300)
+    // }
+})
+    var at_config = {
+      at: "@",
+      data: names,
+      headerTpl: '<div class="atwho-header">Member List<small>↑&nbsp;↓&nbsp;</small></div>',
+      insertTpl: '${name}',
+      displayTpl: "<li>${name} <small>${email}</small></li>",
+      limit: 200
+    }
+    var names = ["Jacob","Isabella","Ethan","Emma","Michael","Olivia","Alexander","Sophia","William","Ava","Joshua","Emily","Daniel","Madison","Jayden","Abigail","Noah","Chloe","你好","你你你", "가"];
+    setTimeout(function() {
+        $('#inputor1476257278').atwho(at_config);
+    }, 1000);
+</script>
+
+
+
